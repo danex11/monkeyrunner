@@ -1,0 +1,2 @@
+C:\Usersuser\AppData\Local\Android\Sdk\platform-tools
+adb shell monkey -p com.example.basicgame01 -v 1000 > app_log

@@ -1,0 +1,10 @@
+C:\Users\user\AppData\Local\Android\Sdk\emulator   -- add to system enviromental variables
+commands: 
+emulator -list-avds
+emulator -avd "<virtualDeviceName>"
+
+record and playback of a script (macro):
+>emulator -avd Samsung_API_22
+>monkeyrunner -v ALL monkey_recorder.py
+record, refresh, save script as script1.mr
+> monkeyrunner -v ALL monkey_playback.pl script1.mr

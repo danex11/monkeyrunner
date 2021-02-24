@@ -1,0 +1,350 @@
+API Reference 05-24-2012 (adding the date for when and if it changes in the future) – no formatting this is how it is dumped to the file when doing “text”
+
+MonkeyRunner help
+
+com.android.monkeyrunner.MonkeyRunner.alert
+Display an alert dialog to the process running the current script.  The dialog is modal, so the script stops until the user dismisses the dialog.
+
+Args:
+message – The message to display in the dialog.
+title – The dialog’s title. The default value is ‘Alert’.
+okTitle – The text to use in the dialog button. The default value is ‘OK’.
+Returns: returns nothing.
+
+com.android.monkeyrunner.MonkeyDevice.broadcastIntent
+Sends a broadcast intent to the device.
+
+Args:
+uri – The URI for the Intent.
+action – The action for the Intent.
+data – The data URI for the Intent
+mimetype – The mime type for the Intent.
+categories – An iterable of category names for the Intent.
+extras – A dictionary of extras to add to the Intent. Types of these extras are inferred from the python types of the values.
+component – The component of the Intent.
+flags – An iterable of flags for the Intent.All arguments are optional. The default value for each argument is null.(see android.content.Context.sendBroadcast(Intent))
+Returns: returns nothing.
+
+com.android.monkeyrunner.MonkeyRunner.choice
+Display a choice dialog that allows the user to select a single item from a list of items.
+
+Args:
+message – The prompt message to display in the dialog.
+choices – An iterable Python type containing a list of choices to display
+title – The dialog’s title. The default is ‘Input’
+Returns: The 0-based numeric offset of the selected item in the iterable.
+
+com.android.monkeyrunner.MonkeyImage.convertToBytes
+Converts the MonkeyImage into a particular format and returns the result as a String. Use this to get access to the rawpixels in a particular format. String output is for better performance.
+
+Args:
+format – The destination format (for example, ‘png’ for Portable Network Graphics format). The default is png.
+Returns: The resulting image as a String.
+
+com.android.monkeyrunner.MonkeyDevice.drag
+Simulates dragging (touch, hold, and move) on the device screen.
+
+Args:
+start – The starting point for the drag (a tuple (x,y) in pixels)
+end – The end point for the drag (a tuple (x,y) in pixels
+duration – Duration of the drag in seconds (default is 1.0 seconds)
+steps – The number of steps to take when interpolating points. (default is 10)
+Returns: returns nothing.
+
+com.android.monkeyrunner.MonkeyView.getAccessibilityIds
+Returns the accessibility ids of the current view
+
+Returns: The accessibility ids of the view as a list of ints
+
+com.android.monkeyrunner.MonkeyRect.getCenter
+Returns a two item list that contains the x and y value of the center of the rectangle
+
+Returns: The center coordinates as a two item list of integers
+
+com.android.monkeyrunner.MonkeyView.getChecked
+Get the checked status of the view
+
+Returns: A boolean value for whether the item is checked or not
+
+com.android.monkeyrunner.MonkeyView.getChildren
+Returns the children of the current view
+
+Returns: The children of the view as a list of MonkeyView objects
+
+com.android.monkeyrunner.MonkeyView.getEnabled
+Returns the enabled status of the view
+
+Returns: The enabled status of the view as a boolean
+
+com.android.monkeyrunner.MonkeyView.getFocused
+Returns the focused status of the view
+
+Returns: The focused status of the view as a boolean
+
+com.android.monkeyrunner.MonkeyRect.getHeight
+Returns the height of the rectangle
+
+Returns: The height of the rectangle as an integer
+
+com.android.monkeyrunner.MonkeyDevice.getHierarchyViewer
+Get the HierarchyViewer object for the device.
+
+Returns: A HierarchyViewer object
+
+com.android.monkeyrunner.MonkeyView.getLocation
+Returns the location of the view in the form of a MonkeyRect
+
+Returns: The location of the view as a MonkeyRect object
+
+com.android.monkeyrunner.MonkeyView.getParent
+Returns the parent of the current view
+
+Returns: The parent of the view as a MonkeyView object
+
+com.android.monkeyrunner.MonkeyDevice.getProperty
+Given the name of a variable on the device, returns the variable’s value
+
+Args:
+key – The name of the variable. The available names are listed in http://developer.android.com/guide/topics/testing/monkeyrunner.html.
+Returns: The variable’s value
+
+com.android.monkeyrunner.MonkeyDevice.getPropertyList
+Retrieve the properties that can be queried
+
+Returns: returns nothing.
+
+com.android.monkeyrunner.MonkeyImage.getRawPixel
+Get a single ARGB (alpha, red, green, blue) pixel at location x,y. The arguments x and y are 0-based, expressed in pixel dimensions. X increases to the right, and Y increases towards the bottom. This method returns a tuple.
+
+Args:
+x – the x offset of the pixel
+y – the y offset of the pixel
+Returns: A tuple of (A, R, G, B) for the pixel. Each item in the tuple has the range 0-255.
+
+com.android.monkeyrunner.MonkeyImage.getRawPixelInt
+Get a single ARGB (alpha, red, green, blue) pixel at location x,y. The arguments x and y are 0-based, expressed in pixel dimensions. X increases to the right, and Y increases towards the bottom. This method returns an Integer.
+
+Args:
+x – the x offset of the pixel
+y – the y offset of the pixel
+Returns: An unsigned integer pixel for x,y. The 8 high-order bits are A, followedby 8 bits for R, 8 for G, and 8 for B.
+
+com.android.monkeyrunner.MonkeyDevice.getRootView
+Obtains current root view
+
+Returns: The root view object
+
+com.android.monkeyrunner.MonkeyView.getSelected
+Returns the selected status of the view
+
+Returns: The selected status of the view as a boolean
+
+com.android.monkeyrunner.MonkeyImage.getSubImage
+Copy a rectangular region of the image.
+
+Args:
+rect – A tuple (x, y, w, h) describing the region to copy. x and y specify upper lefthand corner of the region. w is the width of the region in pixels, and h is its height.
+Returns: a MonkeyImage object representing the copied region.
+
+com.android.monkeyrunner.MonkeyDevice.getSystemProperty
+Synonym for getProperty()
+
+Args:
+key – The name of the system variable.
+Returns: The variable’s value.
+
+com.android.monkeyrunner.MonkeyView.getText
+Returns the text contained by the view
+
+Returns: The text contained in the view
+
+com.android.monkeyrunner.MonkeyDevice.getViewByAccessibilityIds
+Obtains the view with the specified accessibility ids.
+
+Args:
+windowId – The window id of the view to retrieve.
+accessibility id – The accessibility id of the view to retrieve.
+Returns: The view object with the specified id.
+
+com.android.monkeyrunner.MonkeyDevice.getViewById
+Obtains the view with the specified id.
+
+Args:
+id – The id of the view to retrieve.
+Returns: The view object with the specified id.
+
+com.android.monkeyrunner.MonkeyView.getViewClass
+Returns the class name of the view
+
+Returns: The class name of the view as a string
+
+com.android.monkeyrunner.MonkeyDevice.getViewIdList
+Retrieve the view ids for the current application
+
+Returns: returns nothing.
+
+com.android.monkeyrunner.MonkeyDevice.getViewsByText
+Obtains a list of views that contain the specified text.
+
+Args:
+text – The text to search for
+Returns: A list of view objects that contain the specified text.
+
+com.android.monkeyrunner.MonkeyRect.getWidth
+Returns the width of the rectangle
+
+Returns: The width of the rectangle as an integer
+
+com.android.monkeyrunner.MonkeyRunner.help
+Format and display the API reference for MonkeyRunner.
+
+Args:
+format – The desired format for the output, either ‘text’ for plain text or ‘html’ for HTML markup.
+Returns: A string containing the help text in the desired format.
+
+com.android.monkeyrunner.MonkeyRunner.input
+Display a dialog that accepts input. The dialog is ,modal, so the script stops until the user clicks one of the two dialog buttons. To enter a value, the user enters the value and clicks the ‘OK’ button. To quit the dialog without entering a value, the user clicks the ‘Cancel’ button. Use the supplied arguments for this method to customize the text for these buttons.
+
+Args:
+message – The prompt message to display in the dialog.
+initialValue – The initial value to supply to the user. The default is an empty string)
+title – The dialog’s title. The default is ‘Input’
+okTitle – The text to use in the dialog’s confirmation button. The default is ‘OK’.The text to use in the dialog’s ‘cancel’ button. The default is ‘Cancel’.
+cancelTitle –
+Returns: The test entered by the user, or None if the user canceled the input;
+
+com.android.monkeyrunner.MonkeyDevice.installPackage
+Installs the specified Android package (.apk file) onto the device. If the package already exists on the device, it is replaced.
+
+Args:
+path – The package’s path and filename on the host filesystem.
+Returns: True if the install succeeded
+
+com.android.monkeyrunner.MonkeyDevice.instrument
+Run the specified package with instrumentation and return the output it generates. Use this to run a test package using InstrumentationTestRunner.
+
+Args:
+className – The class to run with instrumentation. The format is packagename/classname. Use packagename to specify the Android package to run, and classname to specify the class to run within that package. For test packages, this is usually testpackagename/InstrumentationTestRunner
+args – A map of strings to objects containing the arguments to pass to this instrumentation (default value is None).
+Returns: A map of strings to objects for the output from the package. For a test package, contains a single key-value pair: the key is ‘stream’ and the value is a string containing the test output.
+
+com.android.monkeyrunner.MonkeyRunner.loadImageFromFile
+Loads a MonkeyImage from a file.
+
+Args:
+path – The path to the file to load.  This file path is in terms of the computer running MonkeyRunner and not a path on the Android Device.
+Returns: A new MonkeyImage representing the specified file
+
+com.android.monkeyrunner.MonkeyDevice.press
+Send a key event to the specified key
+
+Args:
+name – the keycode of the key to press (see android.view.KeyEvent)
+type – touch event type as returned by TouchPressType(). To simulate typing a key, send DOWN_AND_UP
+Returns: returns nothing.
+
+com.android.monkeyrunner.MonkeyDevice.reboot
+Reboots the specified device into a specified bootloader.
+
+Args:
+into – the bootloader to reboot into: bootloader, recovery, or None
+Returns: returns nothing.
+
+com.android.monkeyrunner.MonkeyDevice.removePackage
+Deletes the specified package from the device, including its associated data and cache.
+
+Args:
+package – The name of the package to delete.
+Returns: True if remove succeeded
+
+com.android.monkeyrunner.MonkeyImage.sameAs
+Compare this MonkeyImage object to aother MonkeyImage object.
+
+Args:
+other – The other MonkeyImage object.
+percent – A float in the range 0.0 to 1.0, indicating the percentage of pixels that need to be the same for the method to return ‘true’. Defaults to 1.0.
+Returns: boolean ‘true’ if the two objects contain the same image.
+
+com.android.monkeyrunner.MonkeyView.setFocused
+Sets the focused status of the view
+
+Args:
+focused – The boolean value to set focused to
+Returns: returns nothing.
+
+com.android.monkeyrunner.MonkeyView.setSelected
+Sets the selected status of the view
+
+Args:
+selected – The boolean value to set selected to
+Returns: returns nothing.
+
+com.android.monkeyrunner.MonkeyDevice.shell
+Executes an adb shell command and returns the result, if any.
+
+Args:
+cmd – The adb shell command to execute.
+Returns: The output from the command.
+
+com.android.monkeyrunner.MonkeyRunner.sleep
+Pause the currently running program for the specified number of seconds.
+
+Args:
+seconds – The number of seconds to pause.
+Returns: returns nothing.
+
+com.android.monkeyrunner.MonkeyDevice.startActivity
+Starts an Activity on the device by sending an Intent constructed from the specified parameters.
+
+Args:
+uri – The URI for the Intent.
+action – The action for the Intent.
+data – The data URI for the Intent
+mimetype – The mime type for the Intent.
+categories – A Python iterable containing the category names for the Intent.
+extras – A dictionary of extras to add to the Intent. Types of these extras are inferred from the python types of the values.
+component – The component of the Intent.
+flags – An iterable of flags for the Intent.All arguments are optional. The default value for each argument is null.(see android.content.Intent)
+Returns: returns nothing.
+
+com.android.monkeyrunner.MonkeyDevice.takeSnapshot
+Gets the device’s screen buffer, yielding a screen capture of the entire display.
+
+Returns: A MonkeyImage object (a bitmap wrapper)
+
+com.android.monkeyrunner.MonkeyDevice.touch
+Sends a touch event at the specified location
+
+Args:
+x – x coordinate in pixels
+y – y coordinate in pixels
+type – touch event type as returned by TouchPressType()
+Returns: returns nothing.
+
+com.android.monkeyrunner.MonkeyDevice.type
+Types the specified string on the keyboard. This is equivalent to calling press(keycode,DOWN_AND_UP) for each character in the string.
+
+Args:
+message – The string to send to the keyboard.
+Returns: returns nothing.
+
+com.android.monkeyrunner.MonkeyRunner.waitForConnection
+Waits for the workstation to connect to the device.
+
+Args:
+timeout – The timeout in seconds to wait. The default is to wait indefinitely.
+deviceId – A regular expression that specifies the device name. See the documentation for ‘adb’ in the Developer Guide to learn more about device names.
+Returns: A ChimpDevice object representing the connected device.
+
+com.android.monkeyrunner.MonkeyDevice.wake
+Wake up the screen on the device
+
+Returns: returns nothing.
+
+com.android.monkeyrunner.MonkeyImage.writeToFile
+Write the MonkeyImage to a file.  If no format is specified, this method guesses the output format based on the extension of the provided file extension. If it is unable to guess the format, it uses PNG.
+
+Args:
+path – The output filename, optionally including its path
+format – The destination format (for example, ‘png’ for  Portable Network Graphics format.
+Returns: boolean true if writing succeeded.
